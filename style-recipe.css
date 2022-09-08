@@ -9,15 +9,17 @@
   --main-color:#16b978;
   --second-color:#081b54;
 }
+header{
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
 
 header a{
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 100px;
   text-decoration: none;
-  position: fixed;
-  width: 100%;
-  
 }
  .logo {
   display: flex;
