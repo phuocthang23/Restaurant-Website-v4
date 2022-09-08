@@ -74,12 +74,13 @@ form{
     width: 90%;
     max-width: 400px;
     margin: 20px auto;
+    border-radius: 20px;
     background-color: rgb(223, 223, 223);
   }
 input{
     width: 90%;
     padding: 10px;
-    border-radius: 4px;
+    border-radius: 20px;
     border: none;
     outline: none;
     font-size: 2rem;
