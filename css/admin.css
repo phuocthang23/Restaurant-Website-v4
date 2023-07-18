@@ -1,0 +1,242 @@
+
+.table-wrap {
+  /* max-width: 1200px; */
+  margin: 80px auto;
+  overflow-x: auto;
+}
+
+table, td, th {
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size:18px;
+}
+th{
+    background: #000000d6;
+    color: #fff;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 15px;
+  white-space: nowrap;
+}
+
+table tbody tr:nth-child(odd) {
+    background: #69b2ebcc;
+    color: #000;
+    font-weight: 500;
+}
+
+.box-wrap {
+  padding: 0px 16px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-padding-top: 2rem;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: "Poppins", sans-serif;
+    padding: 0;
+    margin: 0;
+    background: url(../img_food/Background.png)no-repeat;
+    background-size: cover;
+    min-height: 180vh;
+  }
+  
+  :root {
+    --main-color: #16b978;
+    --second-color: #081b54;
+    --000000: var(--000000) #000;
+    --reve: #ebf0e4;
+  }
+  
+  section {
+    padding: 50px 10%;
+  }
+  
+  img {
+    width: 100%;
+  }
+  *::selection {
+    color: #fff;
+    background: var(--main-color);
+  }
+  
+  header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 10%;
+    transition: 0.2s;
+  }
+  /* ------ cuộn lớn hơn 0 thì kích hoạt ----- */
+  header.active {
+    background: var(--second-color);
+    box-shadow: 0 0 4px rgb(14 55 54 /15%);
+  }
+  header.active .logo {
+    color: #fff;
+  }
+  header.active .navbar a {
+    color: #fff;
+  }
+  /* -------------- */
+  .logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #000;
+  }
+  .logo img {
+    width: 35px;
+    margin-right: 10px;
+  }
+  .navbar {
+    display: flex;
+    align-items: center;
+  }
+  .navbar a {
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: #000;
+    font-weight: 500px;
+  }
+  .navbar a:hover {
+    color: white;
+    background: var(--main-color);
+    border-radius: 4px;
+  }
+  #menu_icon {
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+  }
+  .home {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-image: url(img_food/Background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    gap: 1rem;
+  }
+  
+  .home-text {
+    flex: 1 1 17rem;
+  }
+  .home-img {
+    flex: 1 1 17rem;
+  }
+  .home-text {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--main-color);
+  }
+  .home-text h1 {
+    font-size: 4rem;
+    color: var(--second-color);
+  }
+  
+  .home-text p {
+    margin: 0.5rem 0 1.4rem;
+  }
+  .btn {
+    padding: 10px 20px;
+    border: 2px solid var(--main-color);
+    border-radius: 40px;
+    color: var(--main-color);
+    font-weight: 500;
+  }
+  .btn:hover {
+    /* kéo dài vị trí */
+    letter-spacing: 2px;
+    color: #fff;
+    background: var(--main-color);
+  }
+  
+  li  i{
+    font-size: 30px;
+    margin-top: 2px;
+    line-height: 0;
+  }
+
+  /* *------------------------------------search------------------------ */
+  .search {
+    width: 100%;
+    /* position: relative; */
+    display: flex;
+  }
+  
+  .searchTerm {
+    width: 100%;
+    border: 3px solid #00b4cc;
+    border-right: none;
+    padding: 5px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9dbfaf;
+  }
+  
+  .searchTerm:focus {
+    color: #00b4cc;
+  }
+  
+  .searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #00b4cc;
+    background: #00b4cc;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  /*Resize the wrap to see the search bar change!*/
+  .wrap {
+    margin-top: 30px;
+    margin: auto;
+    width: 70%;
+    /* position: absolute; */
+    top: 20%;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+  }
+  
+  
+  
+  
+/* *products */
+.add,.change,.edit,.done,.cancel,.delete,.productadd,.productUpdate{
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid rgb(108, 190, 108);
+    cursor: pointer;
+}
+/* * order */
+.green{
+  background-color: #33FF33;
+}
+  

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/edit_Profile.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Thay đổi thông tin cá nhân</h1>
+      <form>
+        <label for="name">Tên:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Nhập tên của bạn"
+        />
+
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Nhập email của bạn"
+        />
+
+        <label for="dob">Ngày sinh:</label>
+        <input type="date" id="dob" name="dob" />
+
+        <label>Giới tính:</label>
+        <div class="gender-group">
+          <label for="male">Male</label>
+          <input type="radio" id="male" name="gender" value="male" checked="checked" />
+
+          <label for="female">Female</label>
+          <input type="radio" id="female" name="gender" value="female" />
+
+          <label for="other">other</label>
+          <input type="radio" id="other" name="gender" value="other" />
+        </div>
+
+        <label for="address">Địa chỉ:</label>
+        <input
+          type="text"
+          id="address"
+          name="address"
+          placeholder="Nhập địa chỉ của bạn"
+        />
+
+        <label for="phone">Phone:</label>
+        <input
+          type="text"
+          id="phone"
+          name="phone"
+          placeholder="Nhập số phone của bạn"
+        />
+      </form>
+      <button type="submit" onclick="handleSubmit()">Save infor </button>
+      <div id="result"></div>
+    </div>
+    <script src="../js/localdata.js"></script>
+    <script src="../js/methodslocal.js"></script>
+    <script src="../js/Edit_Profile.js"></script>
+  </body>
+</html>

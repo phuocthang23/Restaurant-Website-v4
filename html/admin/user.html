@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer</title>
+    <link
+    href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+    <link rel="stylesheet" href="../../css/admin.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">
+          <img src="../../img_food/img/logo.png" alt=" " /> Foodie
+        </a>
+        <div class="bx bx-menu" id="menu_icon"></div>
+  
+        <ul class="navbar">
+          <li><a href="./product.html"> products </a></li>
+          <li li><a href="./order.html"> order </a></li>
+          <li><a href=""> Customer </a></li>
+          <li><a href="../log_in.html" onclick="logOut()"> Log out </a></li>
+        </ul>
+      </header>
+
+ <div class="box-wrap">
+        <div class="table-wrap">
+            <div class="wrap">
+                <div class="search">
+                  <input
+                    type="text"
+                    class="searchTerm"
+                    id="searchTerm"
+                    placeholder="What are you looking for?"
+                  />
+                  <button type="submit" class="searchButton" onclick="searchUser()">
+                    <i class="bx bx-search"></i>
+                  </button>
+                </div>
+              </div>
+            <table>
+                <thead>
+                    <h1>Customer</h1>
+                    <tr>
+                        <th>no.</th>
+                        <th>Name</th>
+                        <th>email</th>
+                        <th>role</th>
+                        <th>status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../../js/localdata.js"></script>
+    <script src="../../js/methodslocal.js"></script>
+    <script src="../../js/admin/user.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>order</title>
+    <link rel="stylesheet" href="../../css/admin.css" />
+    <link
+    href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">
+        <img src="../../img_food/img/logo.png" alt=" " /> Foodie
+      </a>
+      <div class="bx bx-menu" id="menu_icon"></div>
+
+      <ul class="navbar">
+        <li><a href="./product.html"> products </a></li>
+        <li li><a href=""> order </a></li>
+        <li><a href="./user.html"> Customer </a></li>
+        <li><a href="../log_in.html" onclick="logOut()"> Log out </a></li>
+      </ul>
+    </header>
+
+    <div class="box-wrap">
+      <div class="table-wrap">
+        <div class="wrap">
+          <div class="search">
+            <input
+              type="text"
+              class="searchTerm"
+              id="searchTerm"
+              placeholder="What are you looking for?"
+            />
+            <button type="submit" class="searchButton" onclick="searchUser()">
+              <i class="bx bx-search"></i>
+            </button>
+          </div>
+        </div>
+        <table>
+          <thead>
+            <h1>Order</h1>
+            <tr>
+              <th>no.</th>
+              <th>Date Order</th>
+              <th>code products</th>
+              <th>User Name</th>
+              <th>Product Name</th>
+              <th>quantity</th>
+              <th>total</th>
+              <th>active</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- <tr>
+              <td>1</td>
+              <td>Nilu yadav</td>
+              <td>Nilu yadav</td>
+              <td>1</td>
+              <td>1000</td>
+              <td>1000</td>
+              <td>pending</td>
+              <td>
+                <button class="done">done</button>
+                <button class="cancel">cancel</button>
+              </td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+  <script src="../../js/localdata.js"></script>
+  <script src="../../js/methodslocal.js"></script>
+  <script src="../../js/admin/order.js"></script>
+</html>

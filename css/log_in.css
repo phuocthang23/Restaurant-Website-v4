@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@400;500;700&family=Rufina:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-padding-top: 2rem;
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --main-color: #16b978;
+  --second-color: #081b54;
+  --000000: var(--000000) #000;
+  --reve: #ebf0e4;
+}
+
+section {
+  padding: 50px 10%;
+}
+
+img {
+  width: 100%;
+}
+*::selection {
+  color: #fff;
+  background: var(--main-color);
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 10%;
+  transition: 0.2s;
+}
+/* ------ cuộn lớn hơn 0 thì kích hoạt ----- */
+header.active {
+  background: var(--second-color);
+  box-shadow: 0 0 4px rgb(14 55 54 /15%);
+}
+header.active .logo {
+  color: #fff;
+}
+header.active .navbar a {
+  color: #fff;
+}
+/* -------------- */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #000;
+}
+.logo img {
+  width: 35px;
+  margin-right: 10px;
+}
+.navbar {
+  display: flex;
+}
+.navbar a {
+  font-size: 1rem;
+  padding: 10px 20px;
+  color: #000;
+  font-weight: 500px;
+}
+.navbar a:hover {
+  color: white;
+  background: var(--main-color);
+  border-radius: 4px;
+}
+#menu_icon {
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10001;
+  display: none;
+}
+
+/* * chọn giao diện */
+.navbar li:last-child a{
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 4px;
+}
+
+/* *form */
+body{
+    padding: 0;
+    margin: 0;
+    background: url(../img_food/Background.png)no-repeat;
+    background-size: cover;
+}
+
+/*login form css*/
+.form{
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    opacity: 99%;
+    max-width: 500px;
+    margin: 100px auto 100px;
+    padding: 10px 45px 30px 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 10px;
+}
+.form p{
+    font-size: 15px;
+    padding: 10px;
+    text-align: center;
+}
+.form input{
+    outline: 0;
+    border-radius: 10px;
+    background: #F2F2F2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.form input:hover{
+    background-color: #D3F8F9;
+    transition: all 1s ease 0s;
+}
+.form input:focus{
+    background-color: #D3F8F9;
+    transition: all 1s ease 0s;
+}
+.form button{
+    text-transform: uppercase;
+    outline: 0;
+    border-radius: 10px;
+    background: #1ADBE5;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+.form button:hover, .form button:active, .form button:focus{
+    background-color: #06C5CF;
+    transition: all 1s ease 0s;
+}
+.form .message{
+    margin: 15px 0 0;
+    color: #B3B3B3;
+    font-size: 12px;
+}
+.form .message a{
+    color: #06C5CF;
+    text-decoration: none;
+}

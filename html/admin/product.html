@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/admin.css" />
+    <link rel="stylesheet" href="../../css/product.css" />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">
+        <img src="../../img_food/img/logo.png" alt=" " /> Foodie
+      </a>
+      <div class="bx bx-menu" id="menu_icon"></div>
+
+      <ul class="navbar">
+        <li><a href="#about"> products </a></li>
+        <li li><a href="./order.html"> order </a></li>
+        <li><a href="./user.html"> Customer </a></li>
+        <li><a href="../log_in.html" onclick="logOut()"> Log out </a></li>
+      </ul>
+    </header>
+
+    <div class="box-wrap">
+      <div class="table-wrap">
+        <!-- * search -->
+        <div class="wrap">
+          <div class="search">
+            <input
+              type="text"
+              class="searchTerm"
+              id="searchTerm"
+              placeholder="What are you looking for?"
+            />
+            <button type="submit" class="searchButton" onclick="searchProduct()">
+              <i class="bx bx-search"></i>
+            </button>
+          </div>
+        </div>
+        <!-- * search -->
+        <table>
+          <thead>
+            <h1>product</h1>
+            <tr>
+              <th>no.</th>
+              <th>Name</th>
+              <th>image</th>
+              <th>price</th>
+              <th>type</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <button class="add" onclick="addForm()">add</button>
+      </div>
+    </div>
+    <!--*------------------------(modal)------------------------ -->
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <h1>ADD More Dish For Restaurant</h1>
+
+      <div>
+        <label for="name">Dish Name</label>
+        <input type="text" id="name" placeholder="dish name" />
+      </div>
+      <div>
+        <label for="name">Img</label>
+        <input type="text" id="img" placeholder="img name" />
+      </div>
+      <div>
+        <label for="name">Tag Name</label>
+        <input type="text" id="tag" placeholder="tag name" />
+      </div>
+      <div>
+        <label for="name">Price</label>
+        <input type="number" id="price" placeholder="price" />
+      </div>
+      <button class="productadd" onclick="handleAdd()">ADD Product</button>
+      <button class="productUpdate" onclick="handleUpdate()">Update</button>
+    </div>
+
+    <div class="overlay hidden"></div>
+    <script src="../../js/localdata.js"></script>
+    <script src="../../js/methodslocal.js"></script>
+    <script src="../../js/admin/product.js"></script>
+  </body>
+</html>

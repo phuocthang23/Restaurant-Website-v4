@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/shop.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="../index.html" class="logo">
+        <img src="../img_food/img/logo.png" alt=" " /> Foodie
+      </a>
+      <div class="bx bx-menu" id="menu_icon"></div>
+
+      <ul class="navbar">
+        <li><a href="../index.html"> Home </a></li>
+        <li><a href="#footer"> About </a></li>
+        <li li><a href="#shop"> Shop </a></li>
+        <li><a href="#customer"> Customer </a></li>
+        <li><a href="./log_in.html"> Log In </a></li>
+      </ul>
+    </header>
+    <section>
+    <!-- * card  -->
+    <!-- * search bar -->
+    <div class="wrap">
+      <h1>Foodie's Menu</h1>
+      <div class="search">
+        <input
+          type="text"
+          class="searchTerm"
+          placeholder="What are you looking for?"
+        />
+        <button type="submit" class="searchButton" onclick="searchFood()">
+          <i class="bx bx-search"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- * list  -->
+
+    <div class="container">
+      <div class="list"></div>
+    </div>
+  </section>
+
+    <!-- * footer -->
+    <footer id="footer">
+      <div class="bg-foot">
+          <div class="over-foot">
+              <div class="foot-container">
+                  <div class="head-footer">
+                      <h4>Foodie Kitchen</h4>
+                  </div>
+                  <div class="content-footer">
+                      <h6>Location</h6>
+                      <p>44 Street NYC, Bronx, NY 10475, United States</p>
+                      <a href="#contact">Directions</a>
+                  </div>
+
+                  <div class="content-footer">
+                      <h6>Opening Hours</h6>
+                      <p>Monday - Friday</p>
+                      <p>10:00 AM - 08:00 PM</p>
+                      <p>Tel: +1 100 104 40001</p>
+                  </div>
+
+                  <div class="content-footer">
+                      <h6>Social</h6>
+                     <div class="social"> 
+                      <i class="fa-brands fa-facebook"></i>
+                      <i class="fa-brands fa-instagram"></i>
+                      <i class="fa-brands fa-twitter"></i>
+                      <i class="fa-brands fa-youtube"></i>
+                     </div>
+                      <div class="space"> 
+                          <p> Copyright © 2022 Foodie Kitchen Co., Ltd.</p>
+                          <p>Design: Thang</p>
+                      </div>
+                      
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+  </footer>
+
+    <script src="../js/methodslocal.js"></script>
+    <script src="../js/localdata.js"></script>
+    <script src="../js/shop.js"></script>
+  </body>
+</html>
