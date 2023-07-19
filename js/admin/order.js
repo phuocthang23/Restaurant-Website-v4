@@ -1,4 +1,18 @@
+let header = document.querySelector("header");
+let menu = document.querySelector("#menu_icon");
+let navbar = document.querySelector(".navbar");
 
+window.addEventListener("scroll", () => {
+  header.classList.toggle("active", window.scrollY > 0);
+});
+
+menu.onclick = () => {
+  navbar.classList.toggle("active");
+};
+
+window.onscroll = () => {
+  navbar.classList.remove("active");
+};
 
 // * -------------------(log out)------------------
 function logOut() {
@@ -24,7 +38,6 @@ function renderOrderAdmind(key){
               <td>${item.date}</td>
               <td>${item.code}</td>
               <td>${item.email}</td>
-              <td>${cartNames}</td>
               <td>${item.totalProduct}</td>
               <td>${(item.total).toLocaleString()} VND</td>
               <td>${item.isActive}</td>
@@ -39,9 +52,17 @@ function renderOrderAdmind(key){
                 display: ${item.isActive === 'delivered' ? 'none' : 'inline-block'}"; 
                 >cancel</button>
               </td>
+              <td>
+              <button id="openModalBtn" onclick="ModalBtn(${id})"> Detail </button>
+              </td>
         </tr>
         `
     });
+
+    if(key.length === 0){
+        xhtml = ` <h1 style="text-align:center; width:100%"> Results not found </h1> `
+        render.innerHTML = xhtml;
+    }
     render.innerHTML = xhtml;
 }
 renderOrderAdmind(orderHistory);
@@ -67,3 +88,57 @@ function activeOrder(id, action){
     renderOrderAdmind(orderHistory)
 }
 
+function searchOrder() {
+
+    const resultSearch = searchItem("orderHistory","email") 
+  
+    renderOrderAdmind(resultSearch);
+  
+  }
+
+  // * --------------------------*(modal)*------------------------
+
+const openModalBtn = document.getElementById("openModalBtn");
+const closeModal = document.getElementById("closeModal");
+const modal = document.getElementById("myModal");
+
+function ModalBtn(id){
+  const accounts = getDataFromLocal("accounts");
+  console.log(id);
+  modal.style.display = "block";
+  const checkid = orderHistory.filter(el => el.id === id);
+  console.log(checkid);
+  if(checkid){
+    renderDetail(checkid)
+  }
+  
+};
+
+closeModal.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// * ----------------------------(render detail)-------------------
+
+function renderDetail(el){
+  const render = document.querySelector(".detail");
+  let xhtml ="";
+  let count = 0;
+  el.forEach(item => {
+    item.cart.forEach(cart => {
+      count++;
+      xhtml +=
+      `
+      <tr >
+      <td>${count}</td>
+      <td>${item.code}</td>
+      <td>${cart.name}</td>
+      <td>${Number(cart.price).toLocaleString()}</td>
+      <td>${cart.quantity}</td>
+      <td>${Number(cart.price * cart.quantity).toLocaleString()}</td>
+      </tr>
+      `
+    });
+  });
+  render.innerHTML = xhtml;
+}

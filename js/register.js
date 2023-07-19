@@ -54,6 +54,7 @@ document.getElementById("form").addEventListener("submit", function (e) {
 });
 
 function getDataForm() {
+  const accountsFromlocal = getDataFromLocal("accounts") ?? [];
   const user = {
     username: username.value,
     email: email.value.toLowerCase().trim(), // --> chuyển email thành in thường + xóa bỏ space 2 bên,
@@ -64,11 +65,15 @@ function getDataForm() {
   renderError(error);
   if (!error.isError) {
     const tempAccounts = {
+      id:accountsFromlocal.length > 0
+      ? accountsFromlocal[accountsFromlocal.length - 1].id + 1
+      : 0,
       ...user,
       carts: [],
       role: "customer",
       isActive: true,
     };
+    console.log(tempAccounts);
     delete tempAccounts.repeatPassword;
     return tempAccounts;
   }
@@ -83,8 +88,7 @@ function checkValidator(user) {
     repeatPasswordMessage: "",
   };
 
-  const emailRegex = /[^\s@]+@[^\s@]+\.[^\s@]+/gi;
-
+  const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
   //* check user
 
   if (user.username === "") {

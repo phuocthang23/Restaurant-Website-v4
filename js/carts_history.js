@@ -1,54 +1,77 @@
+//*
+const historyFromLocal = getDataFromLocal("orderHistory");
+console.log(historyFromLocal);
+const date = historyFromLocal?.cart;
+// console.log(date);
 const userLogin = getDataFromLocal("userLogin");
- if(userLogin) {
+const newArr = historyFromLocal.filter((el) => el.email === userLogin.email);
+console.log(newArr);
+//*-----------------------------------------------()----------------------------------------
+
+let header = document.querySelector("header");
+let menu = document.querySelector("#menu_icon");
+let navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+  header.classList.toggle("active", window.scrollY > 0);
+});
+
+menu.onclick = () => {
+  navbar.classList.toggle("active");
+};
+
+window.onscroll = () => {
+  navbar.classList.remove("active");
+};
+
+//* --------------------------------------------------(header)----------------------------------------
+
+// const userLogin = getDataFromLocal("userLogin");
+if (userLogin) {
   renderLogin();
- }
+}
 
  function renderLogin(){
   const navbar = document.querySelector(".navbar");
     let xhtml = `
-    <li><a href="#home"> Home </a></li>
+    <li><a href="../index.html"> Home </a></li>
     <li><a href="#about"> About </a></li>
-    <li li><a href="#shop"> Shop </a></li>
+    <li li><a href="../html/shop.html"> Shop </a></li>
     <li><a href="#customer"> Customer </a></li>
     <li><a href="#contact"> Contact </a></li>
     <li><a href="#" class="showDrop"><i class="bx bxs-user-circle"></i></a>
       <ul class="drop">
           <li class="drop-item">
-            <span class="drop-text" ><a href="./html/edit_profile.html"> personal information </a></span>
+            <span class="drop-text" ><a href="../html/edit_profile.html"> personal information </a></span>
           </li>
           <li class="drop-item">
-          <span class="drop-text" ><a href="./html/carts_history.html"> order history </a></span>
+          <span class="drop-text" ><a href="../html/carts_history.html"> order history </a></span>
           </li>
           <li class="drop-item">
-          <span class="drop-text" class="logOut" onclick="logOut()"><a href="">Log out</a></span>
+            <span class="drop-text" ><a href="../html/cart.html"> Cart </a></span>
+          </li>
+          <li class="drop-item">
+          <span class="drop-text" class="logOut" onclick="logOut()"><a href="../html/log_in.html">Log out</a></span>
         </li>
       </ul>
-
     </li>
-    <li ></li>
     `;
     navbar.innerHTML= xhtml;
  }
-
- function logOut(){
+// *----------------------------------(log out)--------------------------------
+function logOut() {
   window.localStorage.removeItem("userLogin");
- }
+  navigate("../html/log_in.html");
+}
 
 //  *------------------------------(toggle)-----------------------
 const dropdownBtn = document.querySelector(".showDrop");
 const dropdownList = document.querySelector(".drop");
-dropdownBtn.addEventListener("click", function() {
+dropdownBtn.addEventListener("click", function () {
   dropdownList.classList.toggle("show");
 });
 
-//*-------------------------------------------------(order history)----------------------------------------------
-const historyFromLocal = getDataFromLocal("orderHistory");
-
-// const userLogin = getDataFromLocal("userLogin");
-const newArr = historyFromLocal.filter((el) => el.email === userLogin.email);
-console.log(newArr);
-
-
+//*----------------------------------------------(header)-----------------------------------------
 function renderHistory(key) {
   const history = document.querySelector(".container");
 
@@ -87,14 +110,12 @@ function renderHistory(key) {
           <div class="item-status">${item.date}</div>
           <div class="status-product"> ${item.isActive} </div>
     </div>
-
       ${render2}
-  
       <div class="total-status">
           <div class="total-price">Tổng cộng: ${Number(
             item.total
           ).toLocaleString()} VNĐ</div>
-          <button class="checkout-btn" type="button"> buy back </button>
+          <button class="checkout-btn" type="button"> buy back</button>
         </div>
       </div>
   </div>
@@ -105,4 +126,5 @@ function renderHistory(key) {
 }
 
 renderHistory(newArr);
+
 

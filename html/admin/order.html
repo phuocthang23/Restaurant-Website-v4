@@ -6,9 +6,9 @@
     <title>order</title>
     <link rel="stylesheet" href="../../css/admin.css" />
     <link
-    href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
-    rel="stylesheet"
-  />
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
@@ -35,7 +35,7 @@
               id="searchTerm"
               placeholder="What are you looking for?"
             />
-            <button type="submit" class="searchButton" onclick="searchUser()">
+            <button type="submit" class="searchButton" onclick="searchOrder()">
               <i class="bx bx-search"></i>
             </button>
           </div>
@@ -46,13 +46,13 @@
             <tr>
               <th>no.</th>
               <th>Date Order</th>
-              <th>code products</th>
-              <th>User Name</th>
-              <th>Product Name</th>
+              <th>code orders</th>
+              <th>Email</th>
               <th>quantity</th>
               <th>total</th>
               <th>active</th>
               <th></th>
+              <th>detail</th>
             </tr>
           </thead>
           <tbody>
@@ -71,10 +71,44 @@
             </tr> -->
           </tbody>
         </table>
+
+        <!--* modal -->
+        <div class="modal" id="myModal">
+          <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <table class="content-table">
+              <thead>
+                <tr>
+                  <th>no.</th>
+                  <th>Code Product</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>quantity</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody class="detail">
+                <tr>
+                  <td>1</td>
+                  <td>13213123</td>
+                  <td>adasda</td>
+                  <td>131231231</td>
+                  <td>131231231</td>
+                  <td>131231231</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </body>
   <script src="../../js/localdata.js"></script>
   <script src="../../js/methodslocal.js"></script>
   <script src="../../js/admin/order.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"
+  ></script>
 </html>

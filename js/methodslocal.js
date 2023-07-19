@@ -30,6 +30,7 @@ function searchItem(key, words){
 function outData(key){
   window.localStorage.removeItem(key);
 }
+
 function findId(key){
   const findId = key.find((item) => item.id === id);
 }

@@ -23,39 +23,49 @@ $(document).ready(function () {
     infinite: true,
     autoplay: true,
     autoplaySpeed: 2000,
-    prevArrow:"<button type='button' class='slick-prev arow'><i class='bx bxs-chevrons-left' ></i></button>",
-    nextArrow:"<button type='button' class='slick-next arow'><i class='bx bxs-chevrons-right' ></i></button>",
+    prevArrow:
+      "<button type='button' class='slick-prev arow'><i class='bx bxs-chevrons-left' ></i></button>",
+    nextArrow:
+      "<button type='button' class='slick-next arow'><i class='bx bxs-chevrons-right' ></i></button>",
     responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            infinite: true,
-            dots: true
-          }
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
         },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1
-          }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
         },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-      ]
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   });
 });
- const userLogin = getDataFromLocal("userLogin");
- if(userLogin) {
+// *------------------------------------------------------(dùng lại)---------------------------------------------------------
+const userLogin = getDataFromLocal("userLogin");
+if (userLogin) {
   renderLogin();
- }
+
+const dropdownBtn = document.querySelector(".showDrop");
+const dropdownList = document.querySelector(".drop");
+dropdownBtn.addEventListener("click", function () {
+  dropdownList.classList.toggle("show");
+});
+
+}
 
  function renderLogin(){
   const navbar = document.querySelector(".navbar");
@@ -84,14 +94,14 @@ $(document).ready(function () {
     `;
     navbar.innerHTML= xhtml;
  }
-
- function logOut(){
+// *----------------------------------(log out)--------------------------------
+function logOut() {
   window.localStorage.removeItem("userLogin");
- }
+}
 
-//  *------------------------------(toggle)-----------------------
-const dropdownBtn = document.querySelector(".showDrop");
-const dropdownList = document.querySelector(".drop");
-dropdownBtn.addEventListener("click", function() {
-  dropdownList.classList.toggle("show");
-});
+// //  *------------------------------(toggle)-----------------------
+// const dropdownBtn = document.querySelector(".showDrop");
+// const dropdownList = document.querySelector(".drop");
+// dropdownBtn.addEventListener("click", function () {
+//   dropdownList.classList.toggle("show");
+// });

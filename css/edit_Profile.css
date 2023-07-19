@@ -1,10 +1,5 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
     padding: 0;
@@ -19,6 +14,7 @@ h1 {
 .container {
     max-width: 400px;
     margin: 0 auto;
+    margin-top: 60px;
 }
 
 label {
@@ -64,3 +60,125 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@400;500;700&family=Rufina:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-padding-top: 2rem;
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --main-color: #16b978;
+  --second-color: #081b54;
+  --000000: var(--000000) #000;
+  --reve: #ebf0e4;
+}
+
+section {
+  padding: 50px 10%;
+}
+
+img {
+  width: 100%;
+}
+*::selection {
+  color: #fff;
+  background: var(--main-color);
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 10%;
+  transition: 0.2s;
+}
+/* ------ cuộn lớn hơn 0 thì kích hoạt ----- */
+header.active {
+  background: var(--second-color);
+  box-shadow: 0 0 4px rgb(14 55 54 /15%);
+}
+header.active .logo {
+  color: #fff;
+}
+header.active .navbar a {
+  color: #fff;
+}
+/* -------------- */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #000;
+}
+.logo img {
+  width: 35px;
+  margin-right: 10px;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+}
+.navbar a {
+  font-size: 1rem;
+  padding: 10px 20px;
+  color: #000;
+  font-weight: 500px;
+}
+.navbar a:hover {
+  color: white;
+  background: var(--main-color);
+  border-radius: 4px;
+}
+#menu_icon {
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10001;
+  display: none;
+}
+/* * -------------------------------------(dropdown)----------------------------------- */
+.drop{
+  position: absolute;
+  top:60px;
+  right:40px;
+  display: none;
+}
+.show{
+  display: block;
+}
+.drop-item{
+  padding: 10px 10px;
+  background-color: #b0e8d1;
+  border-bottom: 1px solid;
+  list-style: none;
+  cursor: pointer;
+}
+.drop-text a {
+  padding: 10px ;
+}
+.drop-item:hover{
+  background-color: var(--main-color);
+}
+li:nth-child(6) a {
+    position: relative;
+    padding: 10px 30px;
+}
+  li i {
+    position: absolute;
+    font-size: 30px;
+    top: 7px;
+    left: 15px;
+  }

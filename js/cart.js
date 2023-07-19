@@ -39,7 +39,7 @@ function renderLogin() {
   let xhtml = `
     <li><a href="../html/index.html"> Home </a></li>
     <li><a href="#customer"> Customer </a></li>
-    <li li><a href="#shop"> Shop </a></li>
+    <li li><a href="../html/shop.html"> Shop </a></li>
     <li><a href="#contact"> Contact </a></li>
     <li>
           <a href="./cart.html" class="shopping">
@@ -265,6 +265,7 @@ function orderProduct() {
         ? orderHistory[orderHistory.length - 1].id + 1
         : 0,
     email: userLogin.email,
+    name: userLogin.username,
     cart: orderRender,
     isActive: "New orders",
     total: totalUsers,

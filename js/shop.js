@@ -17,6 +17,12 @@ window.onscroll = () => {
 const userLogin = getDataFromLocal("userLogin");
 if (userLogin) {
   renderLogin();
+  // * --------------------------(log out)--------------------------
+const dropdownBtn = document.querySelector(".showDrop");
+const dropdownList = document.querySelector(".drop");
+dropdownBtn.addEventListener("click", function() {
+  dropdownList.classList.toggle("show");
+});
 }
 
 //* ----------------------(kiểm tra addcart đã log in hay chưa)-------------------
@@ -109,13 +115,13 @@ function renderLogin() {
     <li><a href="#" class="showDrop"><i class="bx bxs-user-circle"></i></a>
         <ul class="drop">
             <li class="drop-item">
-              <span class="drop-text" ><a href="./html/edit_profile.html"> personal information </a></span>
+              <span class="drop-text" ><a href="../html/edit_profile.html"> personal information </a></span>
             </li>
             <li class="drop-item">
-            <span class="drop-text" ><a href="./html/carts_history.html"> order history </a></span>
+            <span class="drop-text" ><a href="../html/carts_history.html"> order history </a></span>
             </li>
             <li class="drop-item">
-            <span class="drop-text" ><a href="./html/cart.html"> Cart </a></span>
+            <span class="drop-text" ><a href="../html/cart.html"> Cart </a></span>
             </li>
             <li class="drop-item">
             <span class="drop-text" class="logOut" onclick="logOut()"><a href="">Log out</a></span>
@@ -126,12 +132,7 @@ function renderLogin() {
     `;
   navbar.innerHTML = xhtml;
 }
-// * --------------------------(log out)--------------------------
-const dropdownBtn = document.querySelector(".showDrop");
-const dropdownList = document.querySelector(".drop");
-dropdownBtn.addEventListener("click", function() {
-  dropdownList.classList.toggle("show");
-});
+
 
 // * -----------------------(transition cart)----------------
 let openShopping = document.querySelector(".shopping");
