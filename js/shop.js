@@ -63,7 +63,7 @@ function cartProduct(index) {
     const checkCart = cartUser.find(
       (item) => item.idProduct === productUSer.id
     );
-    console.log("xxxx", checkCart);
+    // console.log("xxxx", checkCart);
 
     if (checkCart) {
       checkCart.quantity += 1;
@@ -80,6 +80,7 @@ function cartProduct(index) {
     }
   }
   // console.log(userLogin.carts);
+  alert(" added to cart ")
 
   userLogin.carts = cartUser;
 
